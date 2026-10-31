@@ -1,0 +1,76 @@
+# MR-Shulkers configuration
+# Every option is documented here. After editing, run /mrshulkers reload.
+
+# Do not change. Used to upgrade this file automatically when the plugin updates.
+config-version: 1
+
+open:
+  inventory:
+    # Open a shulker box by clicking it in your own inventory screen (E).
+    enabled: true
+    # Which click opens it. RIGHT or SHIFT_RIGHT.
+    # The cursor must be empty. Other clicks behave as in vanilla.
+    click: RIGHT
+  hand:
+    # Open a shulker box by right-clicking the air while holding it in your main hand.
+    # Right-clicking a block still places the shulker as normal.
+    enabled: true
+    # Only open from hand while sneaking.
+    require-sneak: false
+  ender-chest:
+    # Open shulker boxes stored in your ender chest by clicking them there
+    # (same click as open.inventory.click). Also needs mrshulkers.open.enderchest.
+    enabled: true
+    # Reopen the ender chest after closing a shulker that was opened from it.
+    return-on-close: true
+  # Allow players in creative mode to open shulkers this way.
+  allow-creative: true
+  # Time in milliseconds a player must wait between opening shulkers. 0 turns it off.
+  # Bypass: mrshulkers.bypass.cooldown
+  cooldown-ms: 500
+  # Worlds where opening is disabled. World names, case-insensitive.
+  # Bypass: mrshulkers.bypass.world
+  disabled-worlds: []
+  # Respect the WorldGuard flag "mrshulkers-open" when WorldGuard is installed.
+  # Set the flag to deny in a region to stop opening there. Bypass: mrshulkers.bypass.region
+  worldguard: true
+
+bedrock:
+  # Use Floodgate (if installed) to detect Bedrock players.
+  floodgate: true
+  # Let Bedrock players open from hand without sneaking, even if open.hand.require-sneak is true
+  # (sneak + tap is awkward on touch screens). Only works when Floodgate is installed.
+  skip-sneak-requirement: true
+
+window:
+  # Use the shulker's custom name (from an anvil) as the window title when it has one.
+  # Otherwise the title from messages.yml (window-title) is used.
+  use-item-name: true
+
+sounds:
+  open:
+    # Play a sound when a shulker opens.
+    enabled: true
+    # Sound key, e.g. minecraft:block.shulker_box.open
+    sound: minecraft:block.shulker_box.open
+    # Volume, 0.0 to 10.0.
+    volume: 1.0
+    # Pitch, 0.5 to 2.0.
+    pitch: 1.0
+  close:
+    # Play a sound when a shulker closes.
+    enabled: true
+    # Sound key, e.g. minecraft:block.shulker_box.close
+    sound: minecraft:block.shulker_box.close
+    # Volume, 0.0 to 10.0.
+    volume: 1.0
+    # Pitch, 0.5 to 2.0.
+    pitch: 1.0
+
+safety:
+  # How often (in ticks, 20 = 1 second) to check that every open shulker is still in its owner's inventory.
+  # This is a backup for changes made by other plugins. Range 1-20.
+  watchdog-interval-ticks: 5
+  # Log a line to the console every time someone tries to move an open shulker.
+  # Useful for spotting dupe attempts. Off by default because it can be noisy.
+  log-blocked-actions: false

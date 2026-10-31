@@ -101,10 +101,10 @@ Players there get "You can't open shulkers here." unless they have `mrshulkers.b
 
 Open an issue using the bug report form: [new issue](https://github.com/M-R-Studios/MR-Shulkers/issues/new/choose). Include your server version, MR-Shulkers version (`/mrshulkers version`), steps to reproduce, and for item problems what was in the shulker before and after. For questions and setup help, join the [MR Studios Discord](https://discord.gg/hTsrHsGcTg).
 
-## Download
+## Building
 
-Get the latest jar from [Releases](https://github.com/M-R-Studios/MR-Shulkers/releases/latest).
+```bash
+mvn -B clean package
+```
 
----
-
-© MR Studios. All rights reserved. The source code is not public; this repository hosts releases and bug reports.
+The jar is written to `target/`. Tests run as part of the build; MockBukkit covers the item and session logic.

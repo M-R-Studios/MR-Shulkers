@@ -1,0 +1,58 @@
+name: MR-Shulkers
+version: '${project.version}'
+main: com.mrstudios.shulkers.MRShulkers
+api-version: '1.21'
+author: MR Studios
+description: Open shulker boxes from your inventory, safely.
+folia-supported: false
+softdepend: [WorldGuard, floodgate]
+
+commands:
+  shulker:
+    description: Open the shulker box in your hand.
+    usage: /shulker
+    aliases: [openshulker]
+    permission: mrshulkers.command.shulker
+  mrshulkers:
+    description: MR-Shulkers admin commands.
+    usage: /mrshulkers [reload|version]
+    aliases: [mrs]
+    permission: mrshulkers.admin
+
+permissions:
+  mrshulkers.*:
+    description: All MR-Shulkers permissions.
+    default: op
+    children:
+      mrshulkers.open: true
+      mrshulkers.open.hand: true
+      mrshulkers.open.enderchest: true
+      mrshulkers.command.shulker: true
+      mrshulkers.bypass.cooldown: true
+      mrshulkers.bypass.world: true
+      mrshulkers.bypass.region: true
+      mrshulkers.admin: true
+  mrshulkers.open:
+    description: Open shulker boxes by clicking them in your inventory screen.
+    default: true
+  mrshulkers.open.hand:
+    description: Open shulker boxes by right-clicking the air with one in your main hand.
+    default: true
+  mrshulkers.open.enderchest:
+    description: Open shulker boxes stored in your ender chest.
+    default: op
+  mrshulkers.command.shulker:
+    description: Use /shulker to open the shulker box in your hand.
+    default: true
+  mrshulkers.bypass.cooldown:
+    description: Ignore the cooldown between opening shulkers.
+    default: op
+  mrshulkers.bypass.world:
+    description: Open shulkers in worlds listed in disabled-worlds.
+    default: op
+  mrshulkers.bypass.region:
+    description: Open shulkers in WorldGuard regions with mrshulkers-open set to deny.
+    default: op
+  mrshulkers.admin:
+    description: Use /mrshulkers and its subcommands.
+    default: op

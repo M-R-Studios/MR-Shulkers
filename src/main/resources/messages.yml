@@ -1,0 +1,31 @@
+# MR-Shulkers messages. MiniMessage format: https://docs.advntr.dev/minimessage/format
+# <prefix> inserts the prefix below into any message. Set a message to "" to send nothing.
+
+# Do not change. Used to upgrade this file automatically when the plugin updates.
+messages-version: 1
+
+prefix: "<gradient:#a855f7:#6366f1>MR-Shulkers</gradient> <dark_gray>»</dark_gray> "
+
+# Title of the shulker window when the item has no custom name (or window.use-item-name is false).
+# <name> = the item's name (e.g. "Purple Shulker Box").
+window-title: "<name>"
+
+no-permission: "<prefix><red>You don't have permission to do that."
+player-only: "<prefix><red>Only players can use this command."
+not-holding-shulker: "<prefix><red>Hold a shulker box in your main hand."
+cannot-open-stack: "<prefix><red>You can't open a stack of shulker boxes. Split it first."
+cooldown: "<prefix><red>Wait <remaining>s before opening another shulker."
+disabled-world: "<prefix><red>You can't open shulkers in this world."
+disabled-region: "<prefix><red>You can't open shulkers here."
+creative-disabled: "<prefix><red>You can't open shulkers this way in creative mode."
+closed-item-moved: "<prefix><yellow>Your shulker closed because it left your inventory."
+open-failed: "<prefix><red>That shulker couldn't be opened. Nothing was changed."
+
+help:
+  - "<prefix><white>/mrshulkers reload</white> <gray>- reload config.yml and messages.yml"
+  - "<prefix><white>/mrshulkers version</white> <gray>- show version and active hooks"
+version: "<prefix><gray>MR-Shulkers <white><version></white> on <white><server></white>. Hooks: <white><hooks></white>"
+reload-success: "<prefix><green>Reloaded config.yml and messages.yml."
+reload-warnings: "<prefix><yellow>Reloaded with <count> warning(s):"
+reload-failed: "<prefix><red>Reload failed for <file>; kept the previous settings for it:"
+reload-detail: "<gray> - <detail>"
